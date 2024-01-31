@@ -1,0 +1,82 @@
+
+{% extends 'base_layout.html' %}
+{% load static %}
+
+    {% block content%}
+
+        <!-- main content  -->
+
+        <section class="main-content">
+            <div class="container-xl">
+                <div class="row gy-4">
+                    <div class="section-header">
+                        <h3 class="site-title" >Create a Blog Post</h3>
+                    </div>
+                    <!-- left part 1st section  -->
+                    <div class="col-lg-8">
+                        
+                        <div class="spacer" data-height="50"></div>
+                        <form class="site-form" action="{% url 'articles:create' %}" method="post" enctype="multipart/form-data">
+
+
+                            {% csrf_token %}
+
+                            <div class="section-header">
+                                <p style="font-weight:bold; color:black">Title</p>
+                            </div>
+
+                            
+
+                            <div class="padding-30 rounded bordered">
+                                <div class="row gy-5">
+                                    {{ form.title }}
+                                </div>
+                            </div>
+
+                            <div class="section-header">
+                                <p style="font-weight:bold; color:black">Body</p>
+                            </div>
+
+                            <div class="padding-30 rounded bordered">
+                                <div class="row gy-5">
+                                    {{ form.body }}
+                                </div>
+                            </div>
+
+                            <div class="section-header">
+                                <p style="font-weight:bold; color:black">Slug</p>
+                            </div>
+
+                            <div class="padding-30 rounded bordered">
+                                <div class="row gy-5">
+                                    <!-- {{ form.slug }} -->
+                                </div>
+                            </div>
+
+                            <div class="section-header">
+                                <p style="font-weight:bold; color:black">Thumbnail</p>
+                            </div>
+
+                            <div class="padding-30 rounded bordered">
+                                <div class="row gy-5">
+                                    {{ form.thumb }}
+                                </div>
+                            </div>
+
+                            <input type="submit" value="Create" />
+
+                        
+                        </form>
+                        
+                    </div>
+                    <!-- right part starts from here  -->
+
+                </div>
+            </div>
+        </section>
+
+
+    {% endblock%}
+
+
+

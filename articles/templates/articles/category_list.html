@@ -1,0 +1,192 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Feature post -->
+<section class="bg0">
+    <div class="container">
+        <div class="row m-rl--1">
+
+            <div class="col-sm-6 col-md-3 p-rl-1 p-b-2">
+                <div class="bg-img1 size-a-14 how1 pos-relative"
+                    style="background-image: url({% static 'articles/images/entertainment-02.jpg' %});">
+                    <a href="#" class="dis-block how1-child1 trans-03"></a>
+
+                    <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+                        <a href="#"
+                            class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                            Maasai Mara
+                        </a>
+
+                        <h3 class="how1-child2 m-t-14">
+                            <a href="#" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                Experience the top safari destination in Africa.
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 p-rl-1 p-b-2">
+                <div class="bg-img1 size-a-14 how1 pos-relative"
+                    style="background-image: url({% static 'articles/images/entertainment-03.jpg' %});">
+                    <a href="#" class="dis-block how1-child1 trans-03"></a>
+
+                    <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+                        <a href="#"
+                            class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                            Mombasa
+                        </a>
+
+                        <h3 class="how1-child2 m-t-14">
+                            <a href="#" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                What's better than the sandy beaches and alluring tropical climate of Mombasa?
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 p-rl-1 p-b-2">
+                <div class="bg-img1 size-a-14 how1 pos-relative"
+                    style="background-image: url({% static 'articles/images/entertainment-04.jpg' %});">
+                    <a href="#" class="dis-block how1-child1 trans-03"></a>
+
+                    <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+                        <a href="#"
+                            class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                            Naivasha
+                        </a>
+
+                        <h3 class="how1-child2 m-t-14">
+                            <a href="#" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                From hot geysers to pink flamingoes and other wildlife,Naivasha is a top destination.
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 p-rl-1 p-b-2">
+                <div class="bg-img1 size-a-14 how1 pos-relative"
+                    style="background-image: url({% static 'articles/images/entertainment-05.jpg' %});">
+                    <a href="#" class="dis-block how1-child1 trans-03"></a>
+
+                    <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+                        <a href="#"
+                            class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                            Amboseli
+                        </a>
+
+                        <h3 class="how1-child2 m-t-14">
+                            <a href="#" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                Drive next to some of the biggest land mammals at Amboseli. </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Page heading -->
+<div class="container p-t-4 p-b-40">
+    <h2 class="f1-l-1 cl2">
+        Our Tour Packages
+    </h2>
+</div>
+
+<!-- Post -->
+<section class="bg0 p-b-55">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 p-b-80">
+                <div class="p-r-10 p-r-0-sr991">
+                    <div class="m-t--40 p-b-40">
+
+                        {% for category in categories %}
+
+                        <!-- Item post -->
+                        <div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
+                            <a href="{% url 'articles:tour_by_category' category.id %}"
+                                class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+                                <img src="{{ category.thumb.url }}" alt="IMG">
+                            </a>
+
+                            <div class="size-w-9 w-full-sr575 m-b-25">
+                                <h5 class="p-b-12">
+                                    <a href="{% url 'articles:tour_by_category' category.id %}"
+                                        class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+                                        {{ category.category_name }}
+                                    </a>
+                                </h5>
+
+                                <!-- <div class="cl8 p-b-18">
+                                    <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                        Kikapu Select
+                                    </a>
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        Tours
+                                    </span>
+                                </div> -->
+
+                                <p class="f1-s-1 cl6 p-b-24">
+                                    {{ category.body }}
+                                </p>
+
+                                <a href="{% url 'articles:tour_by_category' category.id %}"
+                                    class="f1-s-1 cl9 hov-cl10 trans-03">
+                                    See More
+                                    <i class="m-l-2 fa fa-long-arrow-alt-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <!-- <a href="#" class="flex-c-c size-a-13 bo-all-1 bocl11 f1-m-6 cl6 hov-btn1 trans-03">
+                        Load More
+                    </a> -->
+                </div>
+            </div>
+
+            <div class="col-md-10 col-lg-4 p-b-80">
+                <div class="p-l-10 p-rl-0-sr991">
+                    <!-- Questions?e -->
+                    <div class="bg10 p-rl-35 p-t-28 p-b-35 m-b-50">
+                        <h5 class="f1-m-5 cl0 p-b-10">
+                            Questions?
+                        </h5>
+
+                        <p class="f1-s-1 cl0 p-b-25">
+                            Contact us through our phone number(+254 753470309) and official channels or through the website contact
+                            page.
+                        </p>
+
+                    </div>
+
+                    
+
+                    <!--  -->
+                    <div class="flex-c-s p-b-50">
+                        <a href="#">
+                            <img class="max-w-full" src="{% static 'articles/images/banner-02.jpg' %}" alt="IMG">
+                        </a>
+                    </div>
+
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

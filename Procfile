@@ -1,0 +1,1 @@
+web: gunicorn kikapu.wsgi --log-file -

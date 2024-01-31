@@ -1,0 +1,157 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+    {% block content%}
+	<!-- Page heading -->
+	<div class="container p-t-4 p-b-40">
+		<h2 class="f1-l-1 cl2">
+			Excursion List
+		</h2>
+	</div>
+
+	<!-- Post -->
+	<section class="bg0 p-b-55">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-10 col-lg-8 p-b-80">
+					<div class="p-r-10 p-r-0-sr991">
+						<div class="m-t--65 p-b-40">
+
+						{% for excursion in excursions %}
+							
+							<!-- Item Blog -->
+							<div class="flex-col-s-c how-bor2 p-t-65 p-b-40">
+								<a href="{% url 'articles:excursion_detail' pk=excursion.id %}" class="f1-s-10 cl2 text-uppercase txt-center hov-cl10 trans-03 p-b-40">
+									Kikapu Excursions
+								</a>
+
+								<h5 class="p-b-17 txt-center">
+									<a href="{% url 'articles:excursion_detail' pk=excursion.id %}" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+										{{ excursion.title}}
+									</a>
+								</h5>
+
+								<div class="cl8 txt-center p-b-24">
+									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+										Kenyan Excursions
+									</a>
+
+									<!-- <span class="f1-s-3 m-rl-3">
+										-
+									</span>
+
+									<span class="f1-s-3">
+										Feb 18
+									</span> -->
+								</div>
+
+								<a href="{% url 'articles:excursion_detail' pk=excursion.id %}" class="wrap-pic-w hov1 trans-03 m-b-30">
+									<img src="{{ excursion.thumb.url }}" alt="IMG">
+								</a>
+
+								<p class="f1-s-11 cl6 txt-center p-b-22">
+									{{ excursion.body }}
+								</p>
+
+								<a href="{% url 'articles:excursion_detail' pk=excursion.id %}" class="f1-s-1 cl9 hov-cl10 trans-03">
+									Read More
+									<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
+								</a>
+							</div>
+
+						{% endfor %}
+
+			
+						</div>
+
+						<!-- Pagination -->
+						<div class="flex-wr-c-c m-rl--7 p-t-15">
+							<a href="#" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 pagi-active">1</a>
+							<a href="#" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7">2</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-10 col-lg-4 p-b-80">
+					<div class="p-l-10 p-rl-0-sr991">							
+						<!-- Subscribe -->
+						<div class="bg10 p-rl-35 p-t-28 p-b-35 m-b-50">
+							<h5 class="f1-m-5 cl0 p-b-10">
+								Question??
+							</h5>
+
+							<p class="f1-s-1 cl0 p-b-25">
+								Contact us through our phone numbers and official channels or through the website contact
+								page.							</p>
+
+							
+						</div>
+
+						<!-- Most Popular -->
+						<div class="p-b-23">
+							<div class="how2 how2-cl4 flex-s-c">
+								<h3 class="f1-m-2 cl3 tab01-title">
+									Most Popular Destinations
+								</h3>
+							</div>
+
+							<ul class="p-t-35">
+								<li class="flex-wr-sb-s p-b-22">
+									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+										1
+									</div>
+
+									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										Maasai Mara
+									</a>
+								</li>
+
+								<li class="flex-wr-sb-s p-b-22">
+									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+										2
+									</div>
+
+									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										The Nairobi National Park
+									</a>
+								</li>
+
+								<li class="flex-wr-sb-s p-b-22">
+									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+										3
+									</div>
+
+									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+Amboseli									</a>
+								</li>
+
+								<li class="flex-wr-sb-s p-b-22">
+									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+										4
+									</div>
+
+									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										Lake Naivasha
+									</a>
+								</li>
+
+
+							</ul>
+						</div>
+
+						<!--  -->
+						<div class="flex-c-s p-b-50">
+							<a href="#">
+								<img class="max-w-full" src="{% static 'articles/images/banner-02.jpg' %}" alt="IMG">
+							</a>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+    {% endblock%}
